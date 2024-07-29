@@ -214,7 +214,7 @@ export async function flashZip(
     let entries = await reader.getEntries();
 
     if (entries.find((e) => e.filename === "script.txt") !== undefined) {
-        flashOptimizedFactoryZip(device, entries, wipe, onReconnect, onProgress);
+        await flashOptimizedFactoryZip(device, entries, wipe, onReconnect, onProgress);
         return;
     }
 
